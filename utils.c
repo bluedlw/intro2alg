@@ -5,10 +5,11 @@ void UniformRNG(float *arr, int N, float d)
 {
     float tmp;
 	int i;
-	static setSeed = false;
+	static int setSeed = 0;
 	if(!setSeed)
 	{
 		srand(time(0));
+		setSeed = 1;
 	}
     for(i = 0; i < N; i++)
     {
