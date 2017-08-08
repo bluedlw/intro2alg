@@ -5,7 +5,11 @@ void UniformRNG(float *arr, int N, float d)
 {
     float tmp;
 	int i;
-	srand(time(0));
+	static setSeed = false;
+	if(!setSeed)
+	{
+		srand(time(0));
+	}
     for(i = 0; i < N; i++)
     {
         tmp = 1.0f * rand() / RAND_MAX * 2;
